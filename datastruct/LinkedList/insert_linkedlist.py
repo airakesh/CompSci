@@ -1,8 +1,6 @@
-'''A Python program to demonstrate all insertion methods of linked list'''
+'''A Python program to demonstrate all insertion methods of linked list and Time complexity.'''
 
 # Node class
-
-
 class Node:
     # Function to initialize the node object
     def __init__(self, data):
@@ -10,8 +8,6 @@ class Node:
         self.next = None  # Initialize next as null
 
 # Linked List class
-
-
 class LinkedList:
 
     # Function to intialize the linked list object
@@ -19,6 +15,7 @@ class LinkedList:
         self.head = None  # Initialize head as null
 
     # The function to insert a new node at the beginning
+    # Time complexity of push() is O(1) as it does constant amount of work.
     def push(self, new_data):
 
         # 1 & 2: Allocate the Node and put in the data
@@ -31,6 +28,7 @@ class LinkedList:
         self.head = new_node
 
     # Insert a new node after the giver prev node.
+    # Time complexity of insertAfter() is O(1) as it does constant amount of work.
     def insertAfter(self, prev_node, new_data):
 
         # 1. Check if the given prev_node exists
@@ -48,6 +46,7 @@ class LinkedList:
         prev_node.next = new_node
 
     # Appends a new node at the end
+    # Time complexity of append is O(n) where n is the number of nodes in linked list. Since there is a loop from head to end, the function does O(n) work.
     def append(self, new_data):
 
         # 1. Create a new node
@@ -75,7 +74,6 @@ class LinkedList:
             print(temp.data)
             temp = temp.next
 
-
 # Driver program
 if __name__ == '__main__':
 
@@ -99,3 +97,7 @@ if __name__ == '__main__':
 
     print('Created linked list is:')
     llist.printList()
+
+# Output:
+# Created Linked list is:  1  7  8  6  4
+
