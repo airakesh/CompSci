@@ -65,7 +65,7 @@ class LinkedList:
         while (last.next):
             last = last.next
 
-        # Change the next of last node
+        # Change the next of last
         last.next = new_node
 
     # Function to print the linked list
