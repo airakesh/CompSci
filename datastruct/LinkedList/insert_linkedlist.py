@@ -1,6 +1,8 @@
 '''A Python program to demonstrate all insertion methods of linked list'''
 
 # Node class
+
+
 class Node:
     # Function to initialize the node object
     def __init__(self, data):
@@ -8,6 +10,8 @@ class Node:
         self.next = None  # Initialize next as null
 
 # Linked List class
+
+
 class LinkedList:
 
     # Function to intialize the linked list object
@@ -30,7 +34,7 @@ class LinkedList:
     def insertAfter(self, prev_node, new_data):
 
         # 1. Check if the given prev_node exists
-        if prev_node is Node:
+        if prev_node is None:
             print('The given previous node must be in LinkedList.')
             return
         # 2. Create a new node
