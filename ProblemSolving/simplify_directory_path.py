@@ -14,31 +14,28 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 class Solution:
-    # @param A : head node of linked list
-    # @param B : integer
-    # @return the head node in the linked list
-    def reverseList(self, A, B):
+    # @param A: String
+    # @return a strings
+    def simplifyPath(self, A):
+        entries = A.split('/')
+        new_path = []
 
-        head = last = None
-        while A:
-            start = A
-            prev = A
-            A = A.next
-            for i in range(1, B):
-                next = A.next
-                A.next = prev
-                prev = A
-                A = next
-            if last:
-                last.next = prev
-            last = start
+        for e in entries:
+            if e == '..':
+                if new_path:
+                    new_path.pop()
+            elif e != '.':
+                new_path.append(e)
 
-            if not head:
-                head = prev
-        if last:
-            last.next = None
+        new_path = [p for p in new_path if p]
+        return '/' + '/'.join(new_path)
 
-        return head
+
+# test cases
+s = Solution()
+A = "/a/./b/../../c/"
+# A = "/home/"
+print(s.simplifyPath(A))
 
 
 
