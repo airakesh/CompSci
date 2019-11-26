@@ -101,3 +101,7 @@ if __name__ == '__main__':
                 fw.writelines(student + '\n')
             else:
                 print('No File Exists!')
+                
+ # output.txt 
+23
+26
