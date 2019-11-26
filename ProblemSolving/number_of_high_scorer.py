@@ -7,7 +7,7 @@ class Solution:
         with open(A, 'r') as file:
             for line in file:
                 id, subject, marks = line.strip().split(',')
-                print(id, subject, marks)
+
                 data[id] = data.get(id, 0) + int(marks)
 
             # Prints student IDs and their total marks who scored => 100.
