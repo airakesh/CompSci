@@ -10,7 +10,7 @@ class Solution:
 
                 data[id] = data.get(id, 0) + int(marks)
 
-            # Prints student IDs and their total marks who scored => 100.
+            # Prints number of students have aggregates scores of 100 or more.
             print(len([key for key, value in data.items() if value >= 100]))
 
 # Use cases
