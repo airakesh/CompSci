@@ -27,7 +27,6 @@ should contain just 2.
 
 That's because 2 students (with ID 23 and 26) have aggregates scores of 100 or more.
 '''
-
 class Solution:
     # @params A: a file containing scores received by students in a number of subjects
     # returns: a list of student IDs who scored >= 100
@@ -84,16 +83,21 @@ class Solution:
             # Prints student IDs and their total marks who scored => 100.
             for key, value in d.items():
                 if value >= 100:
-                    print(key)
+                    yield key
 
-# Ans code
-s = Solution()
 
-# Input file
-A = 'input.txt'
-output = s.numsHighScorers(A)
+# Use cases
+if __name__ == '__main__':
+    s = Solution()
 
-# outfile = open('output.txt', 'w')
-# outfile.write(str(output))
-# outfile.close()
-#
+    # Input file
+    A = 'input.txt'
+    highScorer = s.numsHighScorers(A)
+        
+    # Writing output into output.txt
+    with open('output.txt', 'w+') as fw:
+        for student in highScorer:
+            if student is not None:
+                fw.writelines(student + '\n')
+            else:
+                print('No File Exists!')
