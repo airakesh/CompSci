@@ -11,25 +11,21 @@ class LinkedList:
 	def __init__(self):
 		self.head = None
 
-	def reverse(self, head, k):
-		temp = head
-		prev = next = None
-		count = 0
+    def reverse(self, head, k):
+        temp = self.head
+        prev = next = None
+        count = 0
 
-		# Reverse first k nodes of the linked list
-		while temp and count < k:
-			next = temp.next
-			temp.next = prev
-			prev = temp
-			temp = next
-			count += 1
+        while temp and count < k:
+            next = temp.next
+            temp.next = prev
+            prev = temp
+            temp = next
 
-		if next is not None:
-			head.next = self.reverse(next, k)
+        if next is not None:
+            head.next = self.reverse(next, k)
 
-		# prev is new head of the input list
-		return prev
-
+        return prev
 	# Function to insert a new node at the beginning
 	def push(self, new_data):
 		new_node = Node(new_data)
